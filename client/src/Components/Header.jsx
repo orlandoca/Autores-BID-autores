@@ -8,9 +8,9 @@ export default function Header() {
   return (
     <div className="container">
       <div className="row">
-        <h1>Favorite authors primer</h1>
+        <h1 className="row">Favorite authors </h1>
       </div>
-      <div className="row align-self-start">
+      <div className="col align-self-start">
         {location == "/" ? (
           <button
             type="button"
@@ -25,7 +25,7 @@ export default function Header() {
             className="btn btn-link"
             onClick={() => navigate("/")}
           >
-            home
+            Home
           </button>
         )}
       </div>

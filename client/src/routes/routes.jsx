@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import AuthorHome from "../pages/AuthorHome";
-import AuthorAdd from "../pages/AuthorAdd";
+import AuthorHome from "../Pages/AuthorHome";
+import AuthorAdd from "../Pages/AuthorAdd";
+import AuthorEdit from "../Pages/AuthorEdit";
 
 export default createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export default createBrowserRouter([
       {
         path: "/author/new",
         element: <AuthorAdd />,
+      },
+      {
+        path: "/author/edit",
+        element: <AuthorEdit />,
       },
     ],
   },

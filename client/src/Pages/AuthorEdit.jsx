@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../Components/Header";
-import AuthorComp from "../Components/AuthorComp";
+import AuthorEditComp from "../Components/AuthorEditComp";
 
-export default function AuthorHome() {
+export default function AuthorEdit() {
   return (
     <div>
       <Header />
-      <AuthorComp />
+      <AuthorEditComp />
     </div>
   );
 }
