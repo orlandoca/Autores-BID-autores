@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function AuthorForm() {
   const {
@@ -8,12 +9,16 @@ export default function AuthorForm() {
     formState: { erros },
     handleSubmit,
   } = useForm();
+  const navigate = useNavigate();
 
   const createAuthor = (e) => {
     console.log(e);
     axios
       .post(`http://localhost:8000/api/autor/new`, e)
-      .then((response) => console.log(response.data))
+      .then(function (response) {
+        console.log(response);
+        navigate("/");
+      })
       .catch(function (error) {
         console.log(error);
       });
