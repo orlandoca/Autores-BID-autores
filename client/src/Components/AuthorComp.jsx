@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -7,11 +7,25 @@ export default function AuthorComp() {
   const { id } = useParams();
   const [data, setData] = useState({});
 
-  function deletePet() {
+  const [authors, setAuthors] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(`http://localhost:8000/api/autor`);
+      setAuthors(response.data);
+    };
+
+    getData();
+  }, []);
+
+  function deleteAuthor(id) {
     axios
       .delete(`http://localhost:8000/api/autor/${id}`)
-      .then((res) => setData(res.data));
-    navigate("/");
+      .then((res) => {
+        setData(res.data);
+        setAuthors(authors.filter((item) => item._id !== id));
+      })
+      .catch((error) => console.log(error));
   }
 
   return (
@@ -28,34 +42,27 @@ export default function AuthorComp() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Bill Bryson</td>
-              <td>
-                {" "}
-                <Link className="btn btn-primary" to={`/author/edit/`}>
-                  {" "}
-                  Edit
-                </Link>
-                &nbsp; &nbsp;
-                <Link className="btn btn-secondary" to="/">
-                  Delete
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>Ada Lovelace</td>
-              <td>
-                {" "}
-                <Link className="btn btn-primary" to="/">
-                  {" "}
-                  Edit
-                </Link>
-                &nbsp; &nbsp;
-                <Link className="btn btn-secondary" to="/">
-                  Delete
-                </Link>
-              </td>
-            </tr>
+            {authors.map((author, index) => (
+              <tr key={index}>
+                <td>{author.nombre}</td>
+                <td>
+                  <Link
+                    className="btn btn-primary"
+                    to={`/author/edit/${author._id}`}
+                  >
+                    {" "}
+                    Edit
+                  </Link>
+                  &nbsp; &nbsp;
+                  <button
+                    onClick={(e) => deleteAuthor(author._id, e)}
+                    className="btn btn-secondary"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
