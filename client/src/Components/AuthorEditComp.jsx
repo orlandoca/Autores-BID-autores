@@ -8,7 +8,7 @@ export default function AuthorEditComp() {
       <div className="container">
         <div className="col-lg-6">
           <h1 className="col" style={{ color: "BlueViolet" }}>
-            Edit Author
+            Edit this Author:
           </h1>
           <form>
             <div>
