@@ -47,7 +47,7 @@ export default function AuthorComp() {
                 <td>{author.nombre}</td>
                 <td>
                   <Link
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     to={`/author/edit/${author._id}`}
                   >
                     {" "}
@@ -56,7 +56,7 @@ export default function AuthorComp() {
                   &nbsp; &nbsp;
                   <button
                     onClick={(e) => deleteAuthor(author._id, e)}
-                    className="btn btn-secondary"
+                    className="btn btn-danger"
                   >
                     Delete
                   </button>

@@ -41,7 +41,9 @@ export default function AuthorForm() {
             />
           </div>
           <br />
-          <button className="btn btn-info">Cancel</button>
+          <button className="btn btn-info" onClick={() => navigate("/")}>
+            Cancel
+          </button>
           &nbsp; &nbsp;
           <button className="btn btn-info">Submit</button>
         </form>
