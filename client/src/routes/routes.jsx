@@ -16,7 +16,7 @@ export default createBrowserRouter([
         element: <AuthorAdd />,
       },
       {
-        path: "/author/edit",
+        path: "/author/edit/:id",
         element: <AuthorEdit />,
       },
     ],

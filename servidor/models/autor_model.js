@@ -3,7 +3,7 @@ const AutorSchema = new mongoose.Schema(
   {
     nombre: {
       type: String,
-      minlength: [3, "El minimo es de 10 caracteres"],
+      minlength: [3, "El minimo es de 3 caracteres"],
     },
   },
   { timestamps: true }

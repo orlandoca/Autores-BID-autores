@@ -31,9 +31,9 @@ export default function AuthorComp() {
   return (
     <div className="container">
       <div className="row">
-        <h1 className="col" style={{ color: "BlueViolet" }}>
+        <h6 className="col" style={{ color: "BlueViolet" }}>
           We have quotes by:
-        </h1>
+        </h6>
         <table className="table table-striped table-hover table-bordered">
           <thead>
             <tr>
