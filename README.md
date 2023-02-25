@@ -1,2 +1,6 @@
 ﻿#Autores
-‣潩汲湡潤⌊愠瑵牯獥⌊愠瑵牯獥⌊愠瑵牯獥�
+
+* Objetivos : 
+
+- Crea una aplicación CRUD completa con React, Express, Node y MongoDB
+- Incluir validaciones de back-end
